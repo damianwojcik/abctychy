@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper-container', {
   loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
@@ -24,6 +24,7 @@ jQuery(document).ready(function () {
 
   // inits
   mobile_menu()
+  handle_gallery_thumbnails()
 
   function mobile_menu() {
     var btn = jQuery('.toggle')
@@ -54,5 +55,21 @@ jQuery(document).ready(function () {
       menuWrapper.removeClass('opened')
       btn.removeClass('opened')
     }
+  }
+
+  function handle_gallery_thumbnails() {
+    var image = document.querySelector('.image-block')
+
+    if (!image) return;
+
+    var thumbnails = document.querySelectorAll('.thumbnails li')
+
+    thumbnails.forEach(function (thumbnail) {
+      var imgSrc = thumbnail.querySelector('a').href;
+      thumbnail.addEventListener('mouseover', function() {
+        image.href = imgSrc
+        image.querySelector('img').src = imgSrc
+      })
+    })
   }
 })
