@@ -127,6 +127,11 @@ p {
   display: none;
 }
 
+.text-center {
+  text-align: center;
+  justify-content: center;
+}
+
 /* HEADER */
 .header .container {
   padding: 20px 15px;
@@ -377,6 +382,10 @@ p {
   margin-bottom: 20px;
 }
 
+.offers ul li {
+  display: block;
+}
+
 .card .img-wrap {
   position: relative;
 }
@@ -409,6 +418,7 @@ p {
   padding: 0;
   z-index: 1;
   transition: opacity 0.3s ease;
+  height: 200px;
 }
 
 .card .img-wrap::after {
@@ -923,6 +933,12 @@ form .btn {
   .nav ul li:hover .sub-menu {
     display: flex;
   }
+  .nav li.menu-item-has-children > a:after {
+    content: '\f107';
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin-left: 10px;
+  }
   .nav .sub-menu {
     position: absolute;
     left: 0;
@@ -1011,8 +1027,14 @@ form .btn {
     flex-basis: 33%;
     padding-left: 15px;
   }
+  .main .right .agent {
+    margin-top: 0;
+  }
   .image-block {
     margin-bottom: 30px;
+  }
+  .card img {
+    height: 350px;
   }
   #map iframe {
     height: 500px;

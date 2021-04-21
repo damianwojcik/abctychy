@@ -9,7 +9,7 @@
   <div class="main">
     <div class="container">
       <div class="row">
-        <h2 class="heading"><?php echo $title; ?> - slug symbol oferty</h2>
+        <h2 class="heading"><?php echo $title; ?></h2>
       </div>
       <!-- /.row -->
       <div class="row">
@@ -39,11 +39,12 @@
               $author_phone = get_field('phone', 'user_'. $author_id );
               $author_photo = get_field('photo', 'user_'. $author_id );
               $author_posts_number = count_user_posts( $author_id );
+              $author_posts_url = get_author_posts_url( $author_id );
             ?>
             <div class="agent">
               <div class="top">
                 <div class="agent-avatar" style="background-image: url(<?php echo esc_url($author_photo['sizes']['thumbnail']); ?>)">
-                  <a href="#" class="agent-offers">
+                  <a href="<?php echo $author_posts_url; ?>" class="agent-offers">
                     <span><?php echo $author_posts_number ?></span>
                     <strong>Ofert</strong>
                   </a>
@@ -56,7 +57,7 @@
                   <a href="tel: <?php echo $author_phone ?>"><?php echo $author_phone ?></a>
                 </div>
                 <div class="right">
-                  <a href="#" class="btn btn-gray">Wyślij wiadomość</a>
+                  <a href="mailto: <?php echo $author_email ?>" class="btn btn-gray">Wyślij wiadomość</a>
                 </div>
               </div>
             </div>
@@ -117,24 +118,25 @@
               $author_phone = get_field('phone', 'user_'. $author_id );
               $author_photo = get_field('photo', 'user_'. $author_id );
               $author_posts_number = count_user_posts( $author_id );
+              $author_posts_url = get_author_posts_url( $author_id );
           ?>
           <div class="agent">
             <div class="top">
               <div class="agent-avatar" style="background-image: url(<?php echo esc_url($author_photo['sizes']['thumbnail']); ?>)">
-                <a href="#" class="agent-offers">
-                  <span><?php echo $author_posts_number ?></span>
+                <a href="<?php echo $author_posts_url; ?>" class="agent-offers">
+                  <span><?php echo $author_posts_number; ?></span>
                   <strong>Ofert</strong>
                 </a>
               </div>
-              <h2 class="agent-name"><?php echo $author_firstname." ".$author_lastname ?></h2>
+              <h2 class="agent-name"><?php echo $author_firstname." ".$author_lastname; ?></h2>
               <small class="agent-position">Właściciel</small>
             </div>
             <div class="bottom">
               <div class="left">
-                <a href="tel: <?php echo $author_phone ?>"><?php echo $author_phone ?></a>
+                <a href="tel: <?php echo $author_phone; ?>"><?php echo $author_phone; ?></a>
               </div>
               <div class="right">
-                <a href="#" class="btn btn-gray">Wyślij wiadomość</a>
+                <a href="mailto: <?php echo $author_email; ?>" class="btn btn-gray">Wyślij wiadomość</a>
               </div>
             </div>
           </div>

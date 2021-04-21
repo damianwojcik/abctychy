@@ -55,20 +55,6 @@
 			'menu_class' => 'menu',
 			'container' => false
 		) ) ?>
-		<!-- <ul class="menu">
-			<li><a href="#">Strona Główna</a></li>
-			<li><a href="#">O firmie</a></li>
-			<li>
-				<a href="#">Oferta</a>
-				<ul class="sub-menu">
-					<li><a href="#">Mieszkania</a></li>
-					<li><a href="#">Domy</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Kredyty</a></li>
-			<li><a href="#">Kontakt</a></li>
-			<li><a href="#">RODO</a></li>
-		</ul> -->
 		<div class="toggle">
 			<span class="toggle__line"></span>
 			<span class="toggle__line"></span>

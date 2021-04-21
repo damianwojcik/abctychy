@@ -12,12 +12,13 @@
           $author_phone = get_field('phone', 'user_'. $user->ID );
           $author_photo = get_field('photo', 'user_'. $user->ID );
           $author_posts_number = count_user_posts( $user->ID );
+          $author_posts_url = get_author_posts_url( $user->ID );
         ?>
         <div class="agent">
           <div class="top">
             <div class="agent-avatar" style="background-image: url(<?php echo esc_url($author_photo['sizes']['thumbnail']); ?>)">
-              <a href="#" class="agent-offers">
-                <span><?php echo $author_posts_number ?></span>
+              <a href="<?php echo $author_posts_url; ?>" class="agent-offers">
+                <span><?php echo $author_posts_number; ?></span>
                 <strong>Ofert</strong>
               </a>
             </div>
@@ -66,21 +67,22 @@
       </p>
     </div>
     <div class="right">
+      <?php $category_link = get_category_link(2); ?>
       <ul>
-        <li><a href="#"><b>Mieszkania</b> na wynajem</a></li>
-        <li><a href="#"><b>Domy</b> na wynajem</a></li>
-        <li><a href="#"><b>Działki</b> na wynajem</a></li>
-        <li><a href="#"><b>Lokale</b> na wynajem</a></li>
-        <li><a href="#"><b>Hale</b> na wynajem</a></li>
-        <li><a href="#"><b>Obiekty</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Mieszkania</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Domy</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Działki</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Lokale</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Hale</b> na wynajem</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Obiekty</b> na wynajem</a></li>
       </ul>
       <ul>
-        <li><a href="#"><b>Mieszkania</b> na sprzedaż</a></li>
-        <li><a href="#"><b>Domy</b> na sprzedaż</a></li>
-        <li><a href="#"><b>Działki</b> na sprzedaż</a></li>
-        <li><a href="#"><b>Lokale</b> na sprzedaż</a></li>
-        <li><a href="#"><b>Hale</b> na sprzedaż</a></li>
-        <li><a href="#"><b>Obiekty</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Mieszkania</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Domy</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Działki</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Lokale</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Hale</b> na sprzedaż</a></li>
+        <li><a href="<?php echo $category_link; ?>"><b>Obiekty</b> na sprzedaż</a></li>
       </ul>
     </div>
   </div>

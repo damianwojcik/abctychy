@@ -32,64 +32,50 @@
       <h2 class="heading">Search</h2>
     </div>
     <!-- /.search -->
+    <?php
+      $args = array( 'numberposts' => '4', 'category' => '2' );
+      $recent_posts = wp_get_recent_posts( $args );
+      if ($recent_posts) :
+    ?>
     <div class="offers">
-      <h2 class="heading">Najnosze oferty</h2>
+      <h2 class="heading">Najnowsze oferty</h2>
       <ul>
+      <?php
+        foreach( $recent_posts as $recent ):
+          $title = $recent['post_title'];
+          $fields = get_field_objects($recent['ID']);
+          $id = $recent['ID'];
+          $image = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large' );
+          $price = $fields['price']['value'];
+          $pricing = $fields['pricing']['value'];
+          $rooms = $fields['rooms']['value'];
+          $area = $fields['area']['value'];
+      ?>
         <li>
-          <a href="#" class="card">
+          <a href="<?php the_permalink($id); ?>" class="card">
             <div class="img-wrap">
-              <img src="assets/img/offer-1.jpg" alt="Offer 1">
+            <img src="<?php echo $image[0]; ?>" alt="<?php echo $title; ?>">
               <div class="tags">
-                <span class="price">199 000 zł</span>
-                <span class="meter">4 111,56 zł/m<sup>2</sup></span>
+                <span class="price"><?php echo $price; ?> zł</span>
+                <span class="meter"><?php echo $pricing; ?> zł/m<sup>2</sup></span>
               </div>
             </div>
             <div class="content-wrap">
-              <h3 class="title">Tychy, O</h3>
-              <h3 class="title">Mieszkanie na sprzedaż</h3>
-              <span class="meta">2 pokoje | 50,60 m<sup>2</sup></span>
+              <h3 class="title"><?php echo $title; ?></h3>
+              <span class="meta"><?php echo $rooms; ?> pokoje | <?php echo $area; ?> m<sup>2</sup></span>
             </div>
           </a>
         </li>
-        <li>
-          <a href="#" class="card">
-            <div class="img-wrap">
-              <img src="assets/img/offer-2.jpg" alt="Offer 2">
-              <div class="tags">
-                <span class="price">299 000 zł</span>
-                <span class="meter">4 211,56 zł/m<sup>2</sup></span>
-              </div>
-            </div>
-            <div class="content-wrap">
-              <h3 class="title">Tychy, O</h3>
-              <h3 class="title">Mieszkanie na sprzedaż</h3>
-              <span class="meta">3 pokoje | 55,60 m<sup>2</sup></span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="card">
-            <div class="img-wrap">
-              <img src="assets/img/offer-1.jpg" alt="Offer 1">
-              <div class="tags">
-                <span class="price">199 000 zł</span>
-                <span class="meter">4 111,56 zł/m<sup>2</sup></span>
-              </div>
-            </div>
-            <div class="content-wrap">
-              <h3 class="title">Tychy, O</h3>
-              <h3 class="title">Mieszkanie na sprzedaż</h3>
-              <span class="meta">2 pokoje | 50,60 m<sup>2</sup></span>
-            </div>
-          </a>
-        </li>
+        <?php endforeach; ?>
       </ul>
-      <div class="row">
-        <a href="#" class="btn btn-primary">Zobacz wszystkie</a>
+      <div class="row text-center">
+        <?php $category_link = get_category_link(2); ?>
+        <a href="<?php echo $category_link; ?>" class="btn btn-primary">Zobacz wszystkie</a>
       </div>
       <!-- /.row -->
     </div>
-      <!-- /.offers -->
+    <!-- /.offers -->
+    <?php endif; ?>
   </div>
   <!-- /.container -->
 </div>
