@@ -2,48 +2,39 @@
   <div class="container">
     <h2 class="heading">Nasz zespół</h2>
     <div class="row">
-      <div class="agent">
-        <div class="top">
-          <div class="agent-avatar" style="background-image: url(assets/img/avatar.png)">
-            <a href="#" class="agent-offers">
-              <span>2</span>
-              <strong>Ofert</strong>
-            </a>
+      <?php
+        $args = array(
+            'role'    => 'editor',
+            'order'   => 'ASC'
+        );
+        $users = get_users( $args );
+        foreach ( $users as $user ) :
+          $author_phone = get_field('phone', 'user_'. $user->ID );
+          $author_photo = get_field('photo', 'user_'. $user->ID );
+          $author_posts_number = count_user_posts( $user->ID );
+        ?>
+        <div class="agent">
+          <div class="top">
+            <div class="agent-avatar" style="background-image: url(<?php echo esc_url($author_photo['sizes']['thumbnail']); ?>)">
+              <a href="#" class="agent-offers">
+                <span><?php echo $author_posts_number ?></span>
+                <strong>Ofert</strong>
+              </a>
+            </div>
+            <h2 class="agent-name"><?php echo esc_html( $user->display_name ); ?></h2>
+            <small class="agent-position">Właściciel</small>
           </div>
-          <h2 class="agent-name">Aneta Sobczak</h2>
-          <small class="agent-position">Właściciel</small>
-        </div>
-        <div class="bottom">
-          <div class="left">
-            <a href="tel: 608234299">+48 608 234 299</a>
-          </div>
-          <div class="right">
-            <a href="#" class="btn btn-gray">Wyślij wiadomość</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.agent -->
-      <div class="agent">
-        <div class="top">
-          <div class="agent-avatar" style="background-image: url(assets/img/avatar.png)">
-            <a href="#" class="agent-offers">
-              <span>2</span>
-              <strong>Ofert</strong>
-            </a>
-          </div>
-          <h2 class="agent-name">Aneta Sobczak</h2>
-          <small class="agent-position">Właściciel</small>
-        </div>
-        <div class="bottom">
-          <div class="left">
-            <a href="tel: 608234299">+48 608 234 299</a>
-          </div>
-          <div class="right">
-            <a href="#" class="btn btn-gray">Wyślij wiadomość</a>
+          <div class="bottom">
+            <div class="left">
+              <a href="tel: <?php echo esc_html( $author_phone ); ?>"><?php echo esc_html( $author_phone ); ?></a>
+            </div>
+            <div class="right">
+              <a href="mailto: <?php echo esc_html( $user->user_email ); ?>" class="btn btn-gray">Wyślij wiadomość</a>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- /.agent -->
+        <!-- /.agent -->
+        <?php endforeach; ?>
     </div>
     <!-- /.row -->
   </div>

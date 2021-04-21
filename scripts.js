@@ -4,6 +4,9 @@ var swiper = new Swiper('.swiper-container', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  autoplay: {
+    delay: 3000,
+  },
 });
 
 jQuery(document).ready(function () {
