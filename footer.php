@@ -44,58 +44,7 @@
 <div class="contact">
   <div class="container">
     <h2 class="heading">Napisz do nas</h2>
-    <form action="">
-      <div class="left">
-        <div class="input">
-          <label for="name">Imię i nazwisko</label>
-          <input type="text" name="name" placeholder="Imię i nazwisko">
-        </div>
-        <div class="input">
-          <label for="email">Email</label>
-          <input type="text" name="email" placeholder="Email">
-        </div>
-        <div class="input">
-          <label for="phone">Telefon komórkowy</label>
-          <input type="text" name="phone" placeholder="Telefon komórkowy">
-        </div>
-        <div class="input">
-          <input type="text" value="CAPTCHA" placeholder="Przepisz kod z obrazka">
-        </div>
-        <div class="checkbox">
-          <label for="checkbox1">
-            <input id="checkbox1" type="checkbox" name="checkbox1">
-            Wyrażam zgodę na przetwarzanie podanych przeze mnie w powyższym formularzu danych osobowych przez biuro ABC Nieruchomości w celu wyjaśnienie zgłoszonej przeze mnie sprawy.
-          </label>
-        </div>
-        <div class="checkbox">
-          <label for="checkbox2">
-            <input id="checkbox2" type="checkbox" name="checkbox2">
-            Wyrażam zgodę na przetwarzanie podanych przeze mnie w powyższym formularzu danych osobowych w celach marketingowych przez ABC Nieruchomości
-          </label>
-        </div>
-        <div class="checkbox">
-          <label for="checkbox3">
-            <input id="checkbox3" type="checkbox" name="checkbox3">
-            Wyrażam zgodę na otrzymywanie od ABC Nieruchomości,skierowanych do mnie informacji handlowych oraz materiałów promocyjnych i ofert/ogłoszeń drogą telefoniczną bądź elektroniczną.
-          </label>
-        </div>
-        <div class="checkbox">
-          <label for="checkbox4">
-            <input id="checkbox4" type="checkbox" name="checkbox4">
-            Zgadzam się na przetwarzanie moich danych osobowych w celu przedstawienia mi oferty handlowej przez biuro ABC Nieruchomości
-          </label>
-        </div>
-      </div>
-      <!-- /.left -->
-      <div class="right">
-        <div class="input">
-          <label for="message">Wiadomość</label>
-          <textarea placeholder="Wiadomość"></textarea>
-        </div>
-        <a href="#" class="btn btn-primary">Wyślij wiadomość</a>
-      </div>
-      <!-- /.right -->
-    </form>
+    <?php if( function_exists('ninja_forms_display_form') ){ ninja_forms_display_form(1); } ?>
   </div>
   <!-- /.container -->
 </div>

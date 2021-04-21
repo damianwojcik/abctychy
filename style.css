@@ -639,10 +639,28 @@ p {
   color: #fff;
 }
 
-form label {
+.nf-form-fields-required {
+  display: none;
+}
+
+.nf-form-cont .nf-form-content {
+  padding: 0;
+}
+
+.nf-form-cont .nf-multi-cell .nf-cell {
+  min-width: 100%;
+  padding: 0;
+}
+
+form label,
+.nf-form-cont .nf-field-label label {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
+}
+
+.nf-form-cont .nf-field-container .nf-field-label {
+  margin-bottom: 5px !important;
 }
 
 form .input {
@@ -652,7 +670,10 @@ form .input {
 }
 
 form .input input,
-textarea {
+textarea,
+.nf-form-cont .nf-form-content .list-select-wrap .nf-field-element > div,
+.nf-form-cont .nf-form-content input:not([type='button']),
+.nf-form-cont .nf-form-content textarea {
   border: 2px solid #eaeaea;
   box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
   font-size: 14px;
@@ -681,6 +702,64 @@ form .checkbox {
   margin-bottom: 15px;
   position: relative;
   display: block;
+}
+
+.nf-form-cont .nf-form-content {
+  max-width: none;
+}
+
+.nf-form-cont .nf-field-container .checkbox-wrap .nf-field-label label {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+#ninja_forms_required_items,
+.nf-field-container {
+  margin-bottom: 15px !important;
+}
+
+.checkbox-wrap .nf-field-element label.nf-checked-label:before,
+.checkbox-wrap .nf-field-label label.nf-checked-label:before,
+.listcheckbox-wrap .nf-field-element label.nf-checked-label:before,
+.listcheckbox-wrap .nf-field-label label.nf-checked-label:before {
+  color: rgb(168, 185, 30) !important;
+}
+
+.checkbox-wrap .nf-field-element label:before,
+.checkbox-wrap .nf-field-label label:before,
+.listcheckbox-wrap .nf-field-element label:before,
+.listcheckbox-wrap .nf-field-label label:before {
+  font-size: 20px !important;
+}
+
+.nf-field-container .checkbox-wrap .nf-field-label label:before {
+  left: -29px !important;
+}
+
+.nf-form-cont .nf-form-content button,
+.nf-form-cont .nf-form-content input[type='button'],
+.nf-form-cont .nf-form-content input[type='submit'] {
+  background-color: rgb(168, 185, 30);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nf-form-cont .nf-form-content button:hover,
+.nf-form-cont .nf-form-content input[type='button']:hover,
+.nf-form-cont .nf-form-content input[type='submit']:hover {
+  background: #90a200;
+  color: #fff;
 }
 
 .checkbox label {
@@ -869,10 +948,19 @@ form .btn {
   .btn-gray:hover {
     background-color: #222;
   }
-  .contact form {
+  .contact .form {
     display: flex;
   }
-  .contact form div {
+  .nf-form-cont .nf-multi-cell .nf-cell {
+    min-width: 50%;
+  }
+  .nf-form-cont .nf-multi-cell .nf-cell:first-of-type {
+    padding-right: 15px;
+  }
+  .nf-form-cont .nf-multi-cell .nf-cell:last-of-type {
+    padding-left: 15px;
+  }
+  .contact .form div {
     flex: 1;
   }
   .contact .left {
