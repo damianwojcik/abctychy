@@ -91,7 +91,7 @@
 <!-- /.footer -->
 <div class="copyrights">
   <div class="container">
-    <p>Wykonanie <a href="https://dwojcik.dev/" target="_blank" rel="noopener noreferrer">dwojcik.dev</a></p>
+    <p>ABC Nieruchomośći | 2021 Wykonanie: <a href="https://dwojcik.dev/" target="_blank" rel="noopener noreferrer">dwojcik.dev</a></p>
   </div>
   <!-- /.container -->
 </div>
