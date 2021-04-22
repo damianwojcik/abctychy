@@ -94,10 +94,12 @@
             ?>
               <ul class="props">
               <?php foreach( $fields as $name => $value ): 
-                if ($name !== 'description' && $name !== 'gallery'):
+                if ($name !== 'description' && $name !== 'gallery' && $value['value'] !== ''):
               ?>
                 <li>
-                  <b><?php echo $value['label']; ?></b>
+                  <b>
+                    <?php echo $value['label']; ?>
+                  </b>
                   <span>
                     <?php echo $value['value']; ?>
                     <?php if($name === 'price'): ?>&nbsp;zł<?php endif; ?>
@@ -157,7 +159,7 @@
             ?>
               <ul class="props">
               <?php foreach( $fieldsDesktop as $name => $value ): 
-                if ($name !== 'description' && $name !== 'gallery'):
+                if ($name !== 'description' && $name !== 'gallery' && $value['value'] !== ''):
               ?>
                 <li>
                   <b><?php echo $value['label']; ?></b>

@@ -24,14 +24,13 @@
       <div class="swiper-button swiper-button-next"></div>
     </div>
   </div>
+  <div class="searchbox">
+    <?php echo do_shortcode('[searchandfilter id="119"]'); ?>
+  </div>
 </div>
 <!-- /.slider -->
 <div class="main">
   <div class="container">
-    <div class="search">
-      <h2 class="heading">Search</h2>
-    </div>
-    <!-- /.search -->
     <?php
       $args = array( 'numberposts' => '4', 'category' => '2' );
       $recent_posts = wp_get_recent_posts( $args );

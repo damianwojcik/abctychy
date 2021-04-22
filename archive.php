@@ -8,6 +8,7 @@
       ?>
       <h2 class="heading">
       <?php if(is_author()) { echo 'Oferty agenta: '; }?>
+      <?php if(is_search()) { echo 'Wyniki wyszukiwania: '; }?>
       <?php echo $pieces[1]; ?>
       </h2>
     </div>

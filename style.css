@@ -405,7 +405,120 @@ p {
 }
 
 /* SEARCH */
-.search {
+.searchbox {
+  padding: 30px 15px;
+}
+
+.searchandfilter {
+  padding: 25px;
+  background-color: #9daf09;
+}
+
+.searchandfilter h4 {
+  color: #fff;
+  font-size: 14px;
+  padding: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.sf-range-postfix {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.searchandfilter ul li {
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.searchandfilter ul li:last-child {
+  padding-bottom: 0;
+}
+
+.searchandfilter .noUi-connect {
+  background-color: limegreen;
+}
+
+.searchandfilter select.sf-input-select,
+.sf-input-text {
+  min-width: 100%;
+  border: 2px solid #eaeaea;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  font-size: 14px;
+  color: #555;
+  outline: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.searchandfilter .sf-range-max,
+.searchandfilter .sf-range-min {
+  border: 2px solid #eaeaea;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  font-size: 14px;
+  color: #555;
+  outline: none;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.sf-field-category label,
+.sf-field-post-meta-transaction label,
+.sf-field-search label,
+.sf-field-post-meta-building label {
+  display: block;
+}
+
+.search-filter-reset {
+  padding-top: 15px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.search-filter-reset a,
+.sf-field-submit input {
+  cursor: pointer;
+}
+
+.sf-field-submit {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.sf-field-submit input {
+  background: #222;
+  color: #fff;
+  outline: none;
+  border: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 900;
+  padding: 20px 60px;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sf-field-submit input:hover {
+  opacity: 0.9;
+}
+
+.search-filter-reset::after {
+  content: '\f103';
+  font-family: FontAwesome;
+  padding-left: 3px;
+}
+
+.search-filter-reset:hover {
+  color: #fff;
+}
+
+.searchandfilter .sf-field-post-meta-rooms,
+.searchandfilter .sf-field-post-meta-floor,
+.searchandfilter .sf-field-post-meta-area,
+.searchandfilter .sf-field-post-meta-pricing,
+.searchandfilter .sf-field-post-meta-building {
   display: none;
 }
 
@@ -1041,6 +1154,16 @@ form .btn {
   .heading {
     font-size: 28px;
     margin-bottom: 30px;
+  }
+  .slider {
+    position: relative;
+  }
+  .searchbox {
+    position: absolute;
+    top: 65%;
+    left: 65%;
+    z-index: 99;
+    transform: translate(-50%, -50%);
   }
   .nav .container {
     padding: 0;

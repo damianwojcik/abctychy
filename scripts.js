@@ -28,6 +28,7 @@ jQuery(document).ready(function () {
   // inits
   mobile_menu()
   handle_gallery_thumbnails()
+  handle_searchbox_expand();
 
   function mobile_menu() {
     var btn = jQuery('.toggle')
@@ -72,6 +73,30 @@ jQuery(document).ready(function () {
       thumbnail.addEventListener('mouseover', function() {
         image.href = imgSrc
         image.querySelector('img').src = imgSrc
+      })
+    })
+  }
+
+  function handle_searchbox_expand() {
+    var btn = document.querySelector('.search-filter-reset');
+
+    if(!btn) return;
+
+    var elements = [];
+
+    elements[0] = document.querySelector('.searchandfilter .sf-field-post-meta-rooms');
+    elements[1] = document.querySelector('.searchandfilter .sf-field-post-meta-floor');
+    elements[2] = document.querySelector('.searchandfilter .sf-field-post-meta-area');
+    elements[3] = document.querySelector('.searchandfilter .sf-field-post-meta-pricing');
+    elements[4] = document.querySelector('.searchandfilter .sf-field-post-meta-building');
+
+    btn.addEventListener('click', function() {
+      elements.forEach(function(element) {
+        if (element.style.display === "block") {
+          element.style.display = "none";
+        } else {
+          element.style.display = "block";
+        }
       })
     })
   }
