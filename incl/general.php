@@ -12,6 +12,7 @@
 		wp_enqueue_style( 'swiper', THEME_URL .'/assets/css/swiper-bundle.min.css', '', NULL);
 		wp_enqueue_style( 'lightbox', THEME_URL .'/assets/css/lightbox.min.css', '', NULL);
 		wp_enqueue_style( 'site_styles', THEME_URL .'/style.css', '', NULL);
+		wp_enqueue_style( 'print', THEME_URL .'/assets/css/print.css', '', NULL, 'print');
 	}
 
 

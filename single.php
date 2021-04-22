@@ -12,6 +12,15 @@
         <h2 class="heading"><?php echo $title; ?></h2>
       </div>
       <!-- /.row -->
+      <div class="row desktop">
+        <div class="panel">
+          <a href="javascript:if(window.print)window.print()" class="btn btn-sm btn-print" title="Drukuj">
+            <span class="fas fa-print"></span>
+          </a>
+        </div>
+        <!-- /.panel -->
+      </div>
+      <!-- /.row -->
       <div class="row">
         <div class="left">
           <?php 
