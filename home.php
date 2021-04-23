@@ -49,6 +49,7 @@
           $pricing = $fields['pricing']['value'];
           $rooms = $fields['rooms']['value'];
           $area = $fields['area']['value'];
+          $location = $fields['location']['value'];
       ?>
         <li>
           <a href="<?php the_permalink($id); ?>" class="card">
@@ -61,6 +62,7 @@
             </div>
             <div class="content-wrap">
               <h3 class="title"><?php echo $title; ?></h3>
+              <h4 class="subtitle"><?php echo $location; ?></h4>
               <span class="meta"><?php echo $rooms; ?> pokoje | <?php echo $area; ?> m<sup>2</sup></span>
             </div>
           </a>

@@ -13,9 +13,18 @@
       </div>
       <!-- /.row -->
       <div class="row">
-        <article>
-          <?php the_content(); ?>
-        </article>
+        <div class="left">
+          <article>
+            <?php the_content(); ?>
+          </article>
+        </div>
+        <!-- /.left -->
+        <div class="right">
+          <div class="searchbox">
+            <?php echo do_shortcode('[searchandfilter id="119"]'); ?>
+          </div>
+        </div>
+        <!-- /.right -->
       </div>
     </div>
     <!-- /.container -->
