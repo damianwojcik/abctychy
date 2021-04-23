@@ -163,17 +163,17 @@ p {
 
 /* NAV */
 .nav {
+  background: -o-linear-gradient(
+    top,
+    rgb(168, 185, 30) 0%,
+    rgb(132, 145, 37) 100%
+  );
   background: -webkit-gradient(
     linear,
     left top,
     left bottom,
     from(rgb(168, 185, 30)),
     to(rgb(132, 145, 37))
-  );
-  background: -o-linear-gradient(
-    top,
-    rgb(168, 185, 30) 0%,
-    rgb(132, 145, 37) 100%
   );
   background: linear-gradient(
     to bottom,
@@ -194,15 +194,14 @@ p {
 
 .nav .container {
   height: 60px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  display: block;
+  position: relative;
 }
 
 .toggle {
+  position: absolute;
+  right: 15px;
+  top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,6 +210,7 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
+  z-index: 99;
 }
 
 .toggle.opened {
@@ -295,17 +295,17 @@ p {
   bottom: 0;
   left: 0;
   height: 200px;
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   background: -webkit-gradient(
     linear,
     left top,
     left bottom,
     color-stop(0, rgba(0, 0, 0, 0)),
     to(rgba(0, 0, 0, 0.5))
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 0,
-    rgba(0, 0, 0, 0.5) 100%
   );
   background: linear-gradient(
     to bottom,
@@ -649,17 +649,17 @@ p {
   bottom: 0;
   left: 0;
   height: 85px;
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   background: -webkit-gradient(
     linear,
     left top,
     left bottom,
     color-stop(0, rgba(0, 0, 0, 0)),
     to(rgba(0, 0, 0, 0.6))
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 0,
-    rgba(0, 0, 0, 0.6) 100%
   );
   background: linear-gradient(
     to bottom,
@@ -1187,6 +1187,12 @@ form .btn {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .nav ul.menu {
     display: -webkit-box;
